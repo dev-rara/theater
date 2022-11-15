@@ -1,0 +1,73 @@
+body {
+    background-color: #fff;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/theater.jpeg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Gaegu', cursive;
+
+    min-height: 100vh;
+}
+
+.box {
+    max-width: 480px;
+    margin: auto;
+}
+
+.title {
+    color: white;
+    font-size: 100px;
+    padding-top: 5%;
+}
+
+.subtitle {
+    color: white;
+    font-size: 27px;
+}
+
+.section {
+    padding: 1rem 1.5rem;
+    max-width: 550px;
+    margin: auto;
+}
+
+.is-sparta {
+    color: #AD1D45!important;
+}
+
+.button.is-sparta {
+    background-color: #AD1D45;
+    border-color: transparent;
+    color: #fff !important;
+    font-family: 'Gaegu', cursive;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.button.is-sparta.is-outlined {
+    background-color: gray;
+    color: #fff !important;
+    font-family: 'Gaegu', cursive;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.control > button {
+    height: 40px;
+}
+
+.input::placeholder {
+    font-family: 'Gaegu', cursive;
+}
+
+.button:hover {
+    background-color: #F9D276 !important;
+}
+
+#help-id {
+    margin-top: -5px;
+}
+
+.help {
+    color: gray;
+    font-size: 13px;
+}
