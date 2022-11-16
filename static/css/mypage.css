@@ -1,0 +1,56 @@
+@import "style.css";
+
+
+* {
+    font-family: 'PuradakGentleGothicR';
+}
+
+.review_me {
+    height: 150px;
+    margin: 20px 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review_me .review_me_title{
+    margin: 0;
+    font-size: 50px;
+    font-family: 'PuradakGentleGothicR';
+}
+.review_card{
+    border: 1px solid black;
+    width: 100%;
+    height:  200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.info_img{
+    width: 180px;
+    height: 200px;
+    border: 1px solid red;
+}
+.info_img img{
+    width: 100%;
+}
+.info_text {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 30px;
+    font-size: 20px;
+    font-family: 'GowunDodum-Regular';
+}
+.info_text .info_culture{
+    margin-bottom: 20px;
+}
+.info_text .info_review{
+    background-color: #f1f3f5;
+    width: 100%;
+}
+.review_delete {
+    margin-right: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+}
