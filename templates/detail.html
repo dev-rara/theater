@@ -120,7 +120,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/detail',
+            url: '/detail/post',
             data: {star_give: star, comment_give: comment, time_give: current_time},
             success: function (response) {
                 alert(response['msg'])
@@ -136,7 +136,7 @@
     function show_order() {
         $.ajax({
             type: 'GET',
-            url: '/detail',
+            url: '/detail/get',
             data: {},
             success: function (response) {
                 let rows = response['detail']

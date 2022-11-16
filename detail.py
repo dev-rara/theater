@@ -5,12 +5,11 @@ from pymongo import MongoClient
 client = MongoClient('mongodb+srv://test:test@cluster0.awecqav.mongodb.net/Cluster0?retryWrites=true&w=majority')
 db = client.dbsparta
 
-
-@app.route('/')
+@app.route('/detail')
 def detail():
     return render_template('detail.html')
 
-@app.route("/detail", methods=["POST"])
+@app.route('/detail/post', methods=["POST"])
 def detail_post():
     star_receive = request.form['star_give']
     comment_receive = request.form['comment_give']
@@ -30,7 +29,7 @@ def detail_post():
 
     return jsonify({'msg':'저장완료!'})
 
-@app.route("/detail", methods=["GET"])
+@app.route('/detail/get', methods=["GET"])
 def detail_get():
     detail_list = list(db.details.find({}, {'_id': False}))
     return jsonify({'detail':detail_list})
