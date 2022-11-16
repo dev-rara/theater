@@ -1,3 +1,11 @@
+$(document).ready(function () {
+    $("#input-username").on("propertychange change paste input", function () {
+        $('#help-id').text('아이디 중복확인을 해주세요.').removeClass('is-safe').removeClass('is-success').addClass('is-danger')
+        $('#input-username').focus()
+        return;
+    })
+});
+
 function sign_up() {
     let id = $('#input-username').val()
     let password = $('#input-password').val()
@@ -38,7 +46,6 @@ function id_invalid_check() {
         $('#input-username').focus()
         return;
     }
-    $('#help-id').removeClass('is-success')
 }
 
 function password_invalid_check() {
