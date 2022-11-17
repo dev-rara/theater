@@ -1,9 +1,9 @@
 import requests
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://test:sparta@cluster0.aphlzi8.mongodb.net/Cluster0?retryWrites=true&w=majority')
+client = MongoClient('보안상 삭제')
 db = client.theater
 
-url = 'http://openapi.seoul.go.kr:8088/6e4957636974686432346a6c614d7a/json/culturalEventInfo/1/100/ /'
+url = 'http://openapi.seoul.go.kr:8088/개인키 보안상 삭제/json/culturalEventInfo/1/100/ /'
 response = requests.get(url).json()
 theater_list = (response['culturalEventInfo']['row'])
 # print(theater_list)
