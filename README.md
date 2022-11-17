@@ -30,4 +30,18 @@
 * 마이페이지에서 유저가 등록한 리뷰를 모아 보여주기
 
 ## 👀view
-
+* 로그인 페이지  
+![login.png](login.png)
+<br>
+* 회원가입 페이지
+![register.png](register.png)
+<br>
+* 상세페이지(공연리스트 확인)
+![list.png](list.png)
+<br>
+* 상세페이지(검색을 통한 공연정보 확인)
+![search.png](search.png)
+<br>
+* 마이페이지(등록한 리뷰 확인)
+![mypage.png](mypage.png)
+<br>
