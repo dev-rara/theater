@@ -43,4 +43,4 @@
 <img width="700" height="370" alt="search" src="https://user-images.githubusercontent.com/65327103/202373938-e516eefe-f078-4732-85f7-ecc3cfc393b6.png">  
 
 * 마이페이지(등록한 리뷰 확인)
-<img width="700" height="370" alt="mypage" src="https://user-images.githubusercontent.com/65327103/202373975-7dd8e066-605c-48ac-ad0c-729882099a5f.png">
+<img width="700" height="370" alt="mypage" src="https://user-images.githubusercontent.com/65327103/202443632-94112c5f-7e07-4882-ba91-07142c0b81d2.png">
