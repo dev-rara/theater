@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="46ab9512-16e9-4e33-a189-e0939f5d5dd3" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/theater.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/everyone.iml" beforeDir="false" />
@@ -16,6 +17,9 @@
       <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
+=======
+    <list default="true" id="0eb51208-3b20-4480-902d-cff5331af5d6" name="Changes" comment="" />
+>>>>>>> a3a4d782ef4dc368e45df7e13a30eae7895e5c08
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,9 +88,46 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+=======
+    <configuration name="Flask (app.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <module name="everyone" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flask (detail.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <module name="everyone" />
+      <option name="target" value="$PROJECT_DIR$/detail.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flask server.Flask (detail.py)" />
+        <item itemvalue="Flask server.Flask (app.py)" />
+>>>>>>> a3a4d782ef4dc368e45df7e13a30eae7895e5c08
       </list>
     </recent_temporary>
   </component>
@@ -98,6 +139,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668605119275</updated>
+<<<<<<< HEAD
       <workItem from="1668605144301" duration="876000" />
       <workItem from="1668608248719" duration="102000" />
       <workItem from="1668608359442" duration="235000" />
@@ -107,6 +149,11 @@
       <workItem from="1668612002563" duration="14000" />
       <workItem from="1668612259532" duration="484000" />
       <workItem from="1668616473262" duration="688000" />
+=======
+      <workItem from="1668605144301" duration="1839000" />
+      <workItem from="1668607092545" duration="302000" />
+      <workItem from="1668607453852" duration="2403000" />
+>>>>>>> a3a4d782ef4dc368e45df7e13a30eae7895e5c08
     </task>
     <servers />
   </component>
@@ -125,8 +172,13 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/theater$everyone.coverage" NAME="everyone Coverage Results" MODIFIED="1668608280279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/theater$app.coverage" NAME="app Coverage Results" MODIFIED="1668612319277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/everyone$Flask__detail_py_.coverage" NAME="Flask (detail.py) Coverage Results" MODIFIED="1668605884742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+=======
+    <SUITE FILE_PATH="coverage/everyone$Flask__detail_py_.coverage" NAME="Flask (detail.py) Coverage Results" MODIFIED="1668607526197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/everyone$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1668607131404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+>>>>>>> a3a4d782ef4dc368e45df7e13a30eae7895e5c08
   </component>
 </project>
