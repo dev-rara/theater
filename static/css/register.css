@@ -1,10 +1,22 @@
+/* 폰트 여기에 두고 골라써도 돼요 ! ㅋ*/
+@font-face {
+    font-family: 'PuradakGentleGothicR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.1/PuradakGentleGothicR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'PuradakGentleGothicR'; !important;
+}
+
+
 body {
     background-color: #fff;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/theater.jpeg");
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/bg1.jpg");
     background-size: cover;
     background-position: center;
     font-family: 'Gaegu', cursive;
-
     min-height: 100vh;
 }
 
@@ -17,11 +29,15 @@ body {
     color: white;
     font-size: 100px;
     padding-top: 5%;
+    font-family: 'PuradakGentleGothicR';
+    text-shadow: 2px 2px 5px black;
 }
 
 .subtitle {
     color: white;
     font-size: 27px;
+    font-family: 'PuradakGentleGothicR';
+    text-shadow: 1px 1px 3px black;
 }
 
 .section {
@@ -38,16 +54,14 @@ body {
     background-color: #AD1D45;
     border-color: transparent;
     color: #fff !important;
-    font-family: 'Gaegu', cursive;
-    font-weight: bold;
+    font-family: 'PuradakGentleGothicR';
     font-size: 18px;
 }
 
 .button.is-sparta.is-outlined {
-    background-color: gray;
+    background-color: #D4B996;
+    font-family: 'PuradakGentleGothicR';
     color: #fff !important;
-    font-family: 'Gaegu', cursive;
-    font-weight: bold;
     font-size: 18px;
 }
 

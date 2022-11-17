@@ -20,59 +20,21 @@ function myReviewShow(id) {
         data: {},
         success: function (response) {
             let r_list = JSON.parse(response['review_list'])
-
-            for (let i=0; i<r_list.length; i++) {
+            for (let i=0; i<r_list.length; i++){
+                console.log(r_list[i])
                 let review = r_list[i]['review']
-                let userid = r_list[i]['userid']
-
+                let theater_id = r_list[i]['theater_id']
                 let temp_html = `
                         <div class="review_card">
-                            <div class="info_img">
-                                <img src=#>
-                            </div>
-                            <div class="info_text">
+                            <div class="review_view">
                                 <div class="info_review">${review}</div>
+<!--                                <button onclick="review_del(${theater_id})">삭제</button>-->
                             </div>
-                            <button class="review_delete"> X</button>
-                        </div>`
+                            <a href="/detail/${theater_id}" class="info_theater">공연정보로<br>이동</a>
+                        </div>
+                        `
                 $('#review_card_box').append(temp_html)
             }
         }
     })
 }
-
-                // theater_id에 따른 공연DB를 가져오고 싶은데. 음
-                // // 현재 id의 review데이터
-                // let r_list = JSON.parse(response['review_list'])
-                // // review의 theater_id를 얻기위함
-                // let r = r_list.map(item=> {
-                //     return item.theater_id
-                // })
-                //
-                // // 전체 theater 리스트
-                // let t_list = response['theater_list']
-                // let current_list = t_list.filter(item =>{
-                //     // console.log(item.theater_id)
-                //     // console.log(...r, '리뷰번호') : 배열형태여서 스프레드로 풀어줌
-                //     // console.log(Number(item.theater_id) === Number(...r))
-                //     return Number(item.theater_id) === Number(...r)
-                // })
-                // console.log(current_list)
-
-
-
-                //
-                // // review의 theater_id를 얻기위함
-                // let r = r_list.map(item=> {
-                //     return item.theater_id
-                // })
-                //
-                // // 전체 theater 리스트
-                // let t_list = response['theater_list']
-                // // console.log(t_list)
-                // for(let i=0; i<t_list.length; i++) {
-                //     if (Number(r)==Number(t_list[i]['theater_id'])){
-                //         console.log(t_list[i])
-                //     }
-                // }
-                //

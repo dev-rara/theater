@@ -45,7 +45,6 @@ function reviewShow(id) {
                             <p class="review_view_id">${user}</p>
                             <p class="review_view_text">${review}</p>
                         </div>
-                        <button onclick="reviewDel(${theater_id})">삭제</button>
                     </div>`
                 $('#culture_review_show').append(temp_html)
                 }

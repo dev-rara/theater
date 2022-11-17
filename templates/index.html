@@ -29,7 +29,7 @@
 <body>
 <nav>
     <div class="contain">
-        <a href="/"><i class="fas fa-book"></i> 오늘공연</a>
+        <a href="/">THEATER</a>
         <div class="nav_userbar">
             <button onclick="go_mypage('{{ user_info.id }}')" class="nav_username">{{ user_info.id }} 마이페이지</button>
             <button onclick="log_out()">로그아웃</button>
@@ -59,16 +59,16 @@
 <section class="search contain">
     <h2>공연검색</h2>
     <div class="search_bar">
-        <label class="form_label" for="performance"></label>
-        <select class="form_select" id="performance">
-            <option selected>공연 내용</option>
-            <option value="클래식">클래식</option>
-            <option value="전시">전시/미술</option>
-            <option value="뮤지컬">뮤지컬/오페라</option>
-            <option value="연극">연극</option>
-            <option value="콘서트">콘서트</option>
-            <option value="축제">축제</option>
-        </select>
+{#        <label class="form_label" for="performance"></label>#}
+{#        <select class="form_select" id="performance">#}
+{#            <option selected>공연 내용</option>#}
+{#            <option value="클래식">클래식</option>#}
+{#            <option value="전시">전시/미술</option>#}
+{#            <option value="뮤지컬">뮤지컬/오페라</option>#}
+{#            <option value="연극">연극</option>#}
+{#            <option value="콘서트">콘서트</option>#}
+{#            <option value="축제">축제</option>#}
+{#        </select>#}
         <input id="searchBar_input" type="text" placeholder="공연/전시를 검색하세요">
         <button id="input_search" onclick="theater_search()">검색</button>
         <div id="search_box">
@@ -84,24 +84,7 @@
         </div>
     </div>
 </section>
-<section class="board contain">
-    <div class="reply_box board_mini">
-        <h2>한줄평</h2>
-        <div class="reply_card">
-            <div>재미있다!</div>
-            <div>좋다!</div>
-            <div>신난다!</div>
-        </div>
-    </div>
-    <div class="notice_box board_mini">
-        <h2>알림</h2>
-        <div>
-            <div>공지사항1</div>
-            <div>공지사항2</div>
-            <div>공지사항3</div>
-        </div>
-    </div>
-</section>
+
 
 <section></section>
 
@@ -131,17 +114,17 @@
         <div class="footer-text">
             <p class="name">김소라</p>
             <p class="hobby">backend - JAVA</p>
-            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+            <a class="blog" href="https://velog.io/@rara_kim" target="_blank">블로그</a>
         </div>
         <div class="footer-text">
             <p class="name">권성현</p>
             <p class="hobby">backend - JAVA</p>
-            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+            <a class="blog" href="https://velog.io/@maestroks/" target="_blank">블로그</a>
         </div>
         <div class="footer-text">
             <p class="name">김수예</p>
             <p class="hobby">backend - JAVA</p>
-            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+            <a class="blog" href="https://velog.io/@mes23" target="_blank">블로그</a>
         </div>
     </div>
 </div>

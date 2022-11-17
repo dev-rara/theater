@@ -74,7 +74,7 @@ def mypage(user):
         # jinja를 사용해 html에 status의 값을 넘겨준다
         status = (user == payload["id"])
         user_info = db.users.find_one({"id": user}, {"_id": False})
-        print(user_info, '유저정보')
+        # print(user_info, '유저정보')
         return render_template('mypage.html', user_info=user_info, status=status)
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("home"))
@@ -121,7 +121,8 @@ def sign_in():
             'id': id_receive,
             'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=60 * 60 * 24)
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+        # token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
         return jsonify({'result': 'success', 'token': token})
     else:
@@ -206,17 +207,10 @@ def myReviewShow():
     ID = request.args.get('id_give')
     review_list = list(db.review.find({'userid': {'$regex': ID}}))
     theater_list = list(db.theater_list.find({},{'_id':False}))
-    print(review_list)
+    # print(review_list,'리뷰정보')
 
 
     return jsonify({'review_list': dumps(review_list), 'theater_list': theater_list})
-
-
-
-
-
-
-
 
 
 
