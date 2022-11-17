@@ -25,71 +25,57 @@
     <script src="https://kit.fontawesome.com/6a99101cff.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../static/css/mypage.css">
+    <script>
+        $(document).ready(function () {
+            myReviewShow('{{ user_info.id }}');
+        });
+        function log_out() {
+            $.removeCookie('mytoken');
+            alert('로그아웃 했습니다.')
+            window.location.href = '/login'
+        }
+
+    </script>
 </head>
 
 <body>
 <nav>
     <div class="contain">
-        <a href="#"><i class="fas fa-book"></i> 오늘공연</a>
+        <a href="/"><i class="fas fa-book"></i> 오늘공연</a>
         <div class="nav_userbar">
-            <a href="#" class="nav_username">마이페이지</a>
+            <button onclick="go_mypage('{{ user_info.id }}')" class="nav_username">{{ user_info.id }} 마이페이지</button>
             <button onclick="log_out()">로그아웃</button>
         </div>
     </div>
 </nav>
 
+
 <div class="contain">
     <div class="review_me">
-        <h2 class="review_me_title">thdud111님의 리뷰입니다</h2>
+        <h2 class="review_me_title">{{ user_info.id }} 님의 리뷰입니다</h2>
     </div>
-    <div class="review_card">
-        <div class="info_img">
-            <img src=#>
-        </div>
-        <div class="info_text">
-            <div class="info_culture">
-                <p><span>공연명</span> : 공연명</p>
-                <p><span>공연일정</span> : 공연일정</p>
-                <p><span>공연정보</span> : 공연명</p>
-            </div>
-            <div class="info_review">dddddddddddddddddddddddddddddddd</div>
-        </div>
-        <button class="review_delete"> X </button>
-    </div>
-    <div class="review_card">
-        <div class="info_img">
-            <img src=#>
-        </div>
-        <div class="info_text">
-            <div class="info_culture">
-                <p><span>공연명</span> : 공연명</p>
-                <p><span>공연일정</span> : 공연일정</p>
-                <p><span>공연정보</span> : 공연명</p>
-            </div>
-            <div class="info_review">dddddddddddddddddddddddddddddddd</div>
-        </div>
-        <button class="review_delete"> X </button>
-    </div>
-    <div class="review_card">
-        <div class="info_img">
-            <img src=#>
-        </div>
-        <div class="info_text">
-            <div class="info_culture">
-                <p><span>공연명</span> : 공연명</p>
-                <p><span>공연일정</span> : 공연일정</p>
-                <p><span>공연정보</span> : 공연명</p>
-            </div>
-            <div class="info_review">dddddddddddddddddddddddddddddddd</div>
-        </div>
-        <button class="review_delete"> X </button>
+    <div id="review_card_box">
+{#        <div class="review_card">#}
+{#            <div class="info_img">#}
+{#                <img src=#>#}
+{#            </div>#}
+{#            <div class="info_text">#}
+{#                <div class="info_culture">#}
+{#                    <p><span>공연명</span> : 공연명</p>#}
+{#                    <p><span>공연일정</span> : 공연일정</p>#}
+{#                    <p><span>공연정보</span> : 공연명</p>#}
+{#                </div>#}
+{#                <div class="info_review">dddddddddddddddddddddddddddddddd</div>#}
+{#            </div>#}
+{#            <button class="review_delete"> X</button>#}
+{#        </div>#}
     </div>
 </div>
 
 <footer>
     <div class="footer-box">
 <div class="footer-minibox">
-    <p class="footer-tit">햇병아리 개발자도전하다</p>
+    <p class="footer-tit">으라차차 개발자도전하다</p>
     <div class="footer-icon">
         <i class="fab fa-youtube"></i>
         <i class="fab fa-instagram"></i>
@@ -104,30 +90,31 @@
 </p>
 <div class="collapse" id="collapseExample">
     <div class="card card-body footer-content">
-      <div class="footer-text">
-        <p class="name">정소영</p>
-        <p class="hobby">frontend - React.js </p>
-        <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
-      </div>
-      <div class="footer-text">
-        <p class="name">김소라</p>
-        <p class="hobby">frontend - React.js </p>
-        <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
-      </div>
-      <div class="footer-text">
-        <p class="name">권성현</p>
-        <p class="hobby">frontend - React.js </p>
-        <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
-      </div>
-      <div class="footer-text">
-        <p class="name">김수예</p>
-        <p class="hobby">frontend - React.js </p>
-        <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
-      </div>
+        <div class="footer-text">
+            <p class="name">정소영</p>
+            <p class="hobby">frontend - React.js </p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
+        <div class="footer-text">
+            <p class="name">김소라</p>
+            <p class="hobby">backend - JAVA</p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
+        <div class="footer-text">
+            <p class="name">권성현</p>
+            <p class="hobby">backend - JAVA</p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
+        <div class="footer-text">
+            <p class="name">김수예</p>
+            <p class="hobby">backend - JAVA</p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
     </div>
 </div>
-<p class="copyright">Copyright © 2022 햇병아리 개발공부 <i class="fas fa-dove"></i> All Rights Reserved.</p>
+<p class="copyright">Copyright © 2022 으라차차 개발공부 <i class="fas fa-dove"></i> All Rights Reserved.</p>
 </div>
 </footer>
+<script src="../static/js/mypage.js"></script>
 </body>
 </html>

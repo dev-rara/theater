@@ -22,7 +22,9 @@
   font-style: normal;
 }
 
-
+* button{
+  font-family: 'GowunDodum-Regular';
+}
 
 .contain{
     width: 1200px;
@@ -34,6 +36,7 @@ h2{
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 30px;
+    font-family: 'PuradakGentleGothicR';
 }
 
 .perform_btn{
@@ -67,6 +70,8 @@ h2{
 .perform_card .card_info{
     padding: 5px;
     box-sizing: border-box;
+    font-family: 'GowunDodum-Regular';
+
 }
 .search {
     background-color:#f1f3f5;

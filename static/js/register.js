@@ -10,7 +10,7 @@ function sign_up() {
     let id = $('#input-username').val()
     let password = $('#input-password').val()
     let password2 = $('#input-password2').val()
-    
+
     if (password2 == '') {
         $('#help-password2').text('비밀번호를 입력해주세요.').removeClass('is-safe').addClass('is-danger')
         $('#input-password2').focus()
@@ -22,7 +22,7 @@ function sign_up() {
     } else {
         $('#help-password2').text('비밀번호가 일치합니다.').removeClass('is-danger').addClass('is-success')
     }
-    
+
     $.ajax({
         type: "POST",
         url: "/api/signup",
@@ -36,7 +36,7 @@ function sign_up() {
 
 function id_invalid_check() {
     let id = $('#input-username').val()
-    
+
     if (id == '') {
         $('#help-id').text('아이디를 입력해주세요.').removeClass('is-safe').addClass('is-danger')
         $('#input-username').focus()

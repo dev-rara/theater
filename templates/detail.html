@@ -1,243 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>THEATER</title>
+    <!-- jQuery를 import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+          crossorigin="anonymous">
+    <!-- Bootstrap JavaScript Latest compiled and minified-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- jQuery library (min, slim은 안되는 부분이 있다) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!-- jquery cookie-delete import-->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <link rel="stylesheet" href="../static/css/detail.css">
+    <!-- fontawesome icon import-->
+    <script src="https://kit.fontawesome.com/6a99101cff.js" crossorigin="anonymous"></script>
+    <script>
+        function log_out() {
+            $.removeCookie('mytoken');
+            alert('로그아웃 했습니다.')
+            window.location.href = '/login'
+        }
+        $(document).ready(function () {
+            reviewShow({{ theater.theater_id }});
+            {#reviewShow();#}
+        });
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/static/css/detail.css">
-    <script src="/static/js/detail.js"></script>
+    </script>
 </head>
-<style>
-    .total {
-        margin: 50px auto auto auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-    }
-
-
-    .comment {
-        margin-top: 20px;
-        padding: 20px;
-        height: 350px;
-        width: 500px;
-        border: 1px;
-        border-radius: 10px;
-        display: none;
-
-
-        box-shadow: 0px 0px 3px 0px gray;
-
-
-    }
-
-    .comment > button {
-        margin-top: 30px;
-
-    }
-
-    .rating {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-    }
-
-    .rating > input {
-        display: none;
-    }
-
-    .rating > label {
-        position: relative;
-        width: 1.1em;
-        font-size: 3vw;
-        color: gold;
-        cursor: pointer;
-    }
-
-    .rating > label::before {
-        content: "\2605";
-        position: absolute;
-        opacity: 0;
-    }
-
-    .rating > label:hover:before,
-    .rating > label:hover ~ label:before {
-        opacity: 1 !important;
-    }
-
-    .rating > input:checked ~ label:before {
-        opacity: 1;
-    }
-
-    .rating:hover > input:checked ~ label:before {
-        opacity: 0.4;
-    }
-
-    .box-1 {
-
-        margin: 20px auto;
-        border: 1px solid dimgray;
-        display: flex;
-
-        padding: 5px;
-        height: 350px;
-        max-width: 800px;
-        border-radius: 10px;
-    }
-
-</style>
-<script>
-
-    function btn_1() {
-        $('#review').show()
-    }
-
-    function btn_2() {
-        let comment = $('#floatingTextarea2').val()
-        let star = $("input:radio[name='rating']:checked").val()
-
-        let now = new Date()
-        let year = now.getFullYear()
-        let month = now.getMonth()
-        let date = now.getDate()
-        let hours = now.getHours()
-        let minutes = now.getMinutes()
-        let seconds = now.getSeconds()
-        let current_time = year + "/" + month + "/" + date + "/" + hours + ":" + minutes + ":" + seconds
-
-
-        $.ajax({
-            type: 'POST',
-            url: '/detail/post',
-            data: {star_give: star, comment_give: comment, time_give: current_time},
-            success: function (response) {
-                alert(response['msg'])
-                window.location.reload()
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        show_order();
-    });
-
-    function show_order() {
-        $.ajax({
-            type: 'GET',
-            url: '/detail/get',
-            data: {},
-            success: function (response) {
-                let rows = response['detail']
-                for (let i = 0; i < rows.length; i++) {
-                    let comment = rows[i]['comment']
-                    let star = rows[i]['star']
-                    let current_time = rows[i]['time']
-                    let num = rows[i]['num']
-                    let star_image = `⭐`.repeat(star)
-
-                    let temp_html = `<tr>
-                                                <td>${num}</td>
-                                                <td>${current_time}</td>
-                                                 <td>${comment}</td>
-                                                 <td>${star_image}</td>
-                                                  <td>${current_time}</td>
-                                            </tr>`
-
-                    $('#total-table').append(temp_html)
-                }
-            }
-        });
-    }
-
-</script>
-
 <body>
-<div class="box-1">
-    <div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-<div class="total">
-    <button id="btn_1" onclick="btn_1()" type="button" class="btn btn-outline-primary">리뷰 등록하기</button>
-    <div id="review" class="comment">
-
-        <p>별을 클릭해 보세요</p>
-        <div id="total-star" class="rating">
-
-            <input type="radio" name="rating" value="5" id="star5"><label for="star5">☆</label>
-            <input type="radio" name="rating" value="4" id="star4"><label for="star4">☆</label>
-            <input type="radio" name="rating" value="3" id="star3"><label for="star3">☆</label>
-            <input type="radio" name="rating" value="2" id="star2"><label for="star2">☆</label>
-            <input type="radio" name="rating" value="1" id="star1"><label for="star1">☆</label>
-
-        </div>
-
-        <div class="form-floating">
-    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-              style="height: 100px"></textarea>
-            <label for="floatingTextarea2"></label>
-        </div>
-        <button onclick="btn_2()" id="btn_2" type="button" class="btn btn-outline-success">댓글작성</button>
-
-    </div>
-
-
-</div>
-<hr>
-<div class="container">
-    <div class="table-wrapper">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>순서</th>
-                <th id="name">Name(ID)</th>
-                <th id="comment">comment</th>
-                <th id="star">별점</th>
-                <th id="time">날짜</th>
-            </tr>
-            </thead>
-            <tbody id="total-table">
-
-
-            </tbody>
-        </table>
-        <div class="text-center">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
-                <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">Next <i class="fa fa-long-arrow-right"></i></a></li>
-            </ul>
+<nav>
+<nav>
+    <div class="contain">
+        <a href="/"><i class="fas fa-book"></i> 오늘공연</a>
+        <div class="nav_userbar">
+            <button onclick="go_mypage('{{ user_info.id }}')" class="nav_username">{{ user_info.id }} 마이페이지</button>
+            <button onclick="log_out()">로그아웃</button>
         </div>
     </div>
-</div>
+</nav>
+</nav>
 
+<div class="contain">
+    <div class="culture_today">
+        <h2 class="culture_title">내가 선택한<br>오늘의 관심 있는 공연</h2>
+    </div>
+    <div class="culture_card">
+        <div class="culture_box">
+            <div class="culture_img"><img src={{ theater.MAIN_IMG }}></div>
+            <div class="culture_info">
+                <p><span>공연 명</span> : {{ theater.TITLE }}</p>
+                <p><span>공연 일정</span> : {{ theater.DATE }}</p>
+                <p><span>공연 장소</span> : {{ theater.PLACE }}</p>
+                <p><span>PROGRAM</span> : {{ theater.PROGRAM }}</p>
+                <button><a href="{{ theater.ORG_LINK }}">관련 페이지로 이동</a></button>
+            </div>
+        </div>
+        <div class="culture_review_input">
+            <textarea id="review_text" placeholder="후기를 작성해주세요"></textarea>
+            <button onclick="reviewSave({{ theater.theater_id }})">저장</button>
+        </div>
+        <div id="culture_review_show">
+{#            <div class="review_card">#}
+{#                <div class="review_view">#}
+{#                    <p class="review_view_id">아이디입니다</p>#}
+{#                    <p class="review_view_text">내용내용냉욘내용</p>#}
+{#                </div>#}
+{#                <button onclick="reviewDel(id)">삭제</button>#}
+{#            </div>#}
+        </div>
+        </div>
+    </div>
+
+
+</div>
+<footer>
+    <div class="footer-box">
+<div class="footer-minibox">
+    <p class="footer-tit">으라차차 개발자도전하다</p>
+    <div class="footer-icon">
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fas fa-comment-dots"></i>
+        <i class="fab fa-amilia"></i>
+    </div>
+</div>
+<p class="footer-person">
+    <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">개발자 정보 보기<i class="fas fa-chevron-down"></i>
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body footer-content">
+        <div class="footer-text">
+            <p class="name">정소영</p>
+            <p class="hobby">frontend - React.js </p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
+        <div class="footer-text">
+            <p class="name">김소라</p>
+            <p class="hobby">backend - JAVA</p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
+        <div class="footer-text">
+            <p class="name">권성현</p>
+            <p class="hobby">backend - JAVA</p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
+        <div class="footer-text">
+            <p class="name">김수예</p>
+            <p class="hobby">backend - JAVA</p>
+            <a class="blog" href="https://thdud4479.tistory.com/" target="_blank">블로그</a>
+        </div>
+    </div>
+</div>
+<p class="copyright">Copyright © 2022 으라차차 개발공부 <i class="fas fa-dove"></i> All Rights Reserved.</p>
+</div>
+</footer>
+<script src="../static/js/detail.js"></script>
+<script src="../static/js/mypage.js"></script>
 
 </body>
 </html>
