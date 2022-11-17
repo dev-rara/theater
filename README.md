@@ -11,16 +11,14 @@
 * 팀장: 정소영
 * 팀원: 김소라
 * 팀원: 권성현
-* 팀원: 김수예
-<br>
+* 팀원: 김수예<br>
 
 ## 🛠️기술 스택
 * HTML, CSS, JS
 * Python
 * MongoDB
 * Flask
-* JWT
-<br>
+* JWT<br>
 
 ## 💡구현 기능
 * 회원가입
