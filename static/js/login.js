@@ -7,23 +7,23 @@ function log_out() {
 function log_in() {
     let id = $('#input-username').val()
     let password = $('#input-password').val()
-    
+
     if (id == '') {
-        $('#help-id-login').text('아이디를 입력하세요')
+        $('#help-id-login').text('아이디를 입력하세요').removeClass('is-safe').addClass('is-danger')
         $('#input-username').focus()
         retrun;
     } else {
         $('#help-id-login').text('')
     }
-    
+
     if (password == '') {
-        $('#help-password-login').text('비밀번호를 입력해주세요.')
+        $('#help-password-login').text('비밀번호를 입력해주세요.').removeClass('is-safe').addClass('is-danger')
         $('#input-password').focus()
         return;
     } else {
         $('#help-password-login').text('')
     }
-    
+
     $.ajax({
         type: "POST",
         url: "/api/login",
@@ -31,10 +31,24 @@ function log_in() {
         success: function (response) {
             if (response['result'] == 'success') {
                 $.cookie('mytoken', response['token']);
-                window.location.href = '/index';
+                window.location.href = '/'
             } else {
                 alert(response['msg'])
+                $('#input-username').val('').focus()
+                $('#input-password').val('')
             }
         }
     });
+}
+
+function id_input_check() {
+    let id = $('#input-username').val()
+
+    if (id == '') {
+        $('#help-id-login').text('아이디를 입력하세요').removeClass('is-safe').addClass('is-danger')
+        $('#input-username').focus()
+        retrun;
+    } else {
+        $('#help-id-login').text('')
+    }
 }

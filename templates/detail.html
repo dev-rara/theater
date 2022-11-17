@@ -21,12 +21,24 @@
             crossorigin="anonymous"></script>
     <!-- jquery cookie-delete import-->
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/detail.css">
     <!-- fontawesome icon import-->
     <script src="https://kit.fontawesome.com/6a99101cff.js" crossorigin="anonymous"></script>
-</head>
+    <script>
+        function log_out() {
+            $.removeCookie('mytoken');
+            alert('로그아웃 했습니다.')
+            window.location.href = '/login'
+        }
+        $(document).ready(function () {
+            reviewShow({{ theater.theater_id }});
+            {#reviewShow();#}
+        });
 
+    </script>
+</head>
 <body>
+<nav>
 <nav>
     <div class="contain">
         <a href="/"><i class="fas fa-book"></i> 오늘공연</a>
@@ -36,75 +48,41 @@
         </div>
     </div>
 </nav>
+</nav>
 
-<section class="perform contain">
-    <h2>공연/음악/전시</h2>
-    <div class="perform_btn">
-        <button onclick="theater_show('클래식')">클래식</button>
-        <button onclick="theater_show('뮤지컬')">뮤지컬/오페라</button>
-        <button onclick="theater_show('전시')">전시/미술</button>
+<div class="contain">
+    <div class="culture_today">
+        <h2 class="culture_title">내가 선택한<br>오늘의 관심 있는 공연</h2>
     </div>
-    <div id="perform_box">
-<!--        <div class="perform_card">-->
-<!--            <a href="#" target="_blank"><img src="#"></a>-->
-<!--            <div class="card_info">-->
-<!--                <p>TITLE 공연명</p>-->
-<!--                <p>DATE 날짜/시간</p>-->
-<!--                <p>PLACE 장소</p>-->
-<!--            </div>-->
-<!--            <button class="card_btn" onclick="make_review(id)">리뷰쓰기</button>-->
-<!--        </div>-->
-    </div>
-</section>
-<section class="search contain">
-    <h2>공연검색</h2>
-    <div class="search_bar">
-        <label class="form_label" for="performance"></label>
-        <select class="form_select" id="performance">
-            <option selected>공연 내용</option>
-            <option value="클래식">클래식</option>
-            <option value="전시">전시/미술</option>
-            <option value="뮤지컬">뮤지컬/오페라</option>
-            <option value="연극">연극</option>
-            <option value="콘서트">콘서트</option>
-            <option value="축제">축제</option>
-        </select>
-        <input id="searchBar_input" type="text" placeholder="공연/전시를 검색하세요">
-        <button id="input_search" onclick="theater_search()">검색</button>
-        <div id="search_box">
-{#<!--            <div class="perform_card">-->#}
-{#<!--                <a href="#" target="_blank"><img src="#"></a>-->#}
-{#<!--                <div class="card_info">-->#}
-{#<!--                    <p>TITLE 공연명</p>-->#}
-{#<!--                    <p>DATE 날짜/시간</p>-->#}
-{#<!--                    <p>PLACE 장소</p>-->#}
-{#<!--                </div>-->#}
-{#<!--                <button class="card_btn" onclick="make_review(id)">리뷰쓰기</button>-->#}
-{#<!--            </div>-->#}
+    <div class="culture_card">
+        <div class="culture_box">
+            <div class="culture_img"><img src={{ theater.MAIN_IMG }}></div>
+            <div class="culture_info">
+                <p><span>공연 명</span> : {{ theater.TITLE }}</p>
+                <p><span>공연 일정</span> : {{ theater.DATE }}</p>
+                <p><span>공연 장소</span> : {{ theater.PLACE }}</p>
+                <p><span>PROGRAM</span> : {{ theater.PROGRAM }}</p>
+                <button><a href="{{ theater.ORG_LINK }}">관련 페이지로 이동</a></button>
+            </div>
+        </div>
+        <div class="culture_review_input">
+            <textarea id="review_text" placeholder="후기를 작성해주세요"></textarea>
+            <button onclick="reviewSave({{ theater.theater_id }})">저장</button>
+        </div>
+        <div id="culture_review_show">
+{#            <div class="review_card">#}
+{#                <div class="review_view">#}
+{#                    <p class="review_view_id">아이디입니다</p>#}
+{#                    <p class="review_view_text">내용내용냉욘내용</p>#}
+{#                </div>#}
+{#                <button onclick="reviewDel(id)">삭제</button>#}
+{#            </div>#}
+        </div>
         </div>
     </div>
-</section>
-<section class="board contain">
-    <div class="reply_box board_mini">
-        <h2>한줄평</h2>
-        <div class="reply_card">
-            <div>재미있다!</div>
-            <div>좋다!</div>
-            <div>신난다!</div>
-        </div>
-    </div>
-    <div class="notice_box board_mini">
-        <h2>알림</h2>
-        <div>
-            <div>공지사항1</div>
-            <div>공지사항2</div>
-            <div>공지사항3</div>
-        </div>
-    </div>
-</section>
 
-<section></section>
 
+</div>
 <footer>
     <div class="footer-box">
 <div class="footer-minibox">
@@ -148,7 +126,8 @@
 <p class="copyright">Copyright © 2022 으라차차 개발공부 <i class="fas fa-dove"></i> All Rights Reserved.</p>
 </div>
 </footer>
-<script src="../static/js/index.js"></script>
+<script src="../static/js/detail.js"></script>
 <script src="../static/js/mypage.js"></script>
+
 </body>
 </html>

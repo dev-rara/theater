@@ -1,0 +1,64 @@
+nav {
+  width: 100%;
+  height: 55px;
+  font-family: 'PuradakGentleGothicR';
+  font-size: 20px;
+  background-color: #f1f3f5;
+  display: flex;
+  align-items: center;
+}
+nav .contain {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.nav_userbar{
+  display: flex;
+  justify-content: flex-end;
+}
+.nav_userbar .nav_username {
+  margin-right: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  background-color: white;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: gray;
+  box-shadow: 1px 1px 2px lightgray;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1220px){
+  nav .contain { width: 100%; padding: 5px 20px 0  }
+  nav a { padding: 0}
+}
+
+
+
+
+footer {
+    font-family: 'PuradakGentleGothicR';
+    width: 100%; padding: 30px; box-sizing: border-box; border-top: 1px solid #dee2e6; margin-top: 30px;}
+.footer-box { width: 1200px; margin: 0 auto; }
+.footer-box .footer-minibox { display: flex; justify-content: space-between; align-items: center;}
+.footer-box .footer-minibox .footer-tit { font-size: 20px; margin-bottom: 15px;}
+.footer-box .footer-minibox .footer-tit i { margin-right: 5px;}
+.footer-box .footer-minibox .footer-icon i { margin-right: 15px; }
+.footer-box .footer-minibox .footer-icon i:last-child { margin-right: 0; }
+.footer-box .footer-content { display: flex; flex-direction: row; justify-content: space-between; align-items: center;}
+.footer-box .footer-content .footer-text { width: 24%; padding: 10px; box-sizing: border-box; border-radius: 10px;}
+.footer-box .footer-content .footer-text p { margin-bottom: 7px; text-align: center; box-sizing: border-box; }
+.footer-box .footer-content .footer-text a { padding: 2px 15px; box-sizing: border-box; border-radius: 5px; width: 100%; text-align: center; display: block; margin: 0 auto;}
+.footer-box .footer-content .footer-text:nth-child(odd) { background-color: #e9ecef;}
+.footer-box .footer-content .footer-text:nth-child(even) { border: solid 2px #e9ecef;}
+.footer-box .footer-content .footer-text:nth-child(odd) a { background-color: white;}
+.footer-box .footer-content .footer-text:nth-child(even) a { background-color: #e9ecef;}
+.footer-box .footer-content .footer-text .name { font-size: 18px; font-weight: 600;  }
+.footer-box .copyright { margin-top: 35px; text-align: center; background-color: #f1f3f5; padding: 10px; box-sizing: border-box; }
+
