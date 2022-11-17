@@ -31,17 +31,16 @@
 
 ## 👀view
 * 로그인 페이지  
-![login.png](login.png)
-<br>
+<img width="700" height="370" alt="login" src="https://user-images.githubusercontent.com/65327103/202373651-aa480279-9dd8-4e49-8b2c-67856a0f3b28.png">  
+
 * 회원가입 페이지
-![register.png](register.png)
-<br>
+<img width="700" height="370" alt="register" src="https://user-images.githubusercontent.com/65327103/202373740-c41fc80c-d954-434d-b986-0cf49207c830.png">  
+
 * 상세페이지(공연리스트 확인)
-![list.png](list.png)
-<br>
+<img width="700" height="370" alt="list" src="https://user-images.githubusercontent.com/65327103/202373885-07bd7dff-1e9b-4f00-95f9-f8e54f73c55c.png">  
+
 * 상세페이지(검색을 통한 공연정보 확인)
-![search.png](search.png)
-<br>
+<img width="700" height="370" alt="search" src="https://user-images.githubusercontent.com/65327103/202373938-e516eefe-f078-4732-85f7-ecc3cfc393b6.png">  
+
 * 마이페이지(등록한 리뷰 확인)
-![mypage.png](mypage.png)
-<br>
+<img width="700" height="370" alt="mypage" src="https://user-images.githubusercontent.com/65327103/202373975-7dd8e066-605c-48ac-ad0c-729882099a5f.png">
